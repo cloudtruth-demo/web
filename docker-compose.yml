@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'app'
+    environment:
+      SVC_ENV: 'development'
+      SVC_NAME: 'web'
+      SVC_PORT: '3000'
+      AWS_DEFAULT_REGION: 'local'
+    volumes:
+      - .:/srv/app
+    ports:
+      - '3000:3000'
