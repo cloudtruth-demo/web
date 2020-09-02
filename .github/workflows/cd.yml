@@ -1,0 +1,48 @@
+name: CD
+
+on: [push]
+
+env:
+  DEPLOY_AWS_ENV_TID: ${{ secrets.DEPLOY_AWS_ENV_TID }}
+  DEPLOY_WEB_ENV_TID: ${{ secrets.DEPLOY_WEB_ENV_TID }}
+  DEPLOY_WEB_DOTENV_TID: ${{ secrets.DEPLOY_WEB_DOTENV_TID }}
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup operation environment
+        run: |
+          branch=${GITHUB_REF##*/}
+          if [[ "$branch" == "master" ]]; then
+            env="production"
+          else
+            env="development"
+          fi
+          echo "::set-env name=ENV::${env}"
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Packages
+        run: yarn install
+
+      - name: Configure react
+        run: curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_DOTENV_TID}/${ENV} > .env
+
+      - name: Build react
+        run: yarn build
+
+      - name: Deploy to S3
+        run: |
+          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | cat)
+          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_ENV_TID}/${ENV} | cat)
+          aws s3 sync build/ s3://${BUCKET_NAME}/
+          aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
