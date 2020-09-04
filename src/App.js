@@ -8,6 +8,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+          <p>
+              Web live config:
+          </p>
+          <Svc address={"https://ctcaas-graph.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV}/>
         <p>
           Service demo1:
         </p>

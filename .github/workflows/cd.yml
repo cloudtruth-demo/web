@@ -34,6 +34,8 @@ jobs:
       - name: Install Packages
         run: yarn install
 
+      # Note that contents of .env are exposed in webapp, so while we treat the
+      # TID as secret, it technically doesn't have to be
       - name: Configure react
         run: curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_DOTENV_TID}/${ENV} > .env
 
