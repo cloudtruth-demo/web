@@ -44,7 +44,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | cat)
+          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | sed 's/&quot;//g' | cat)
           source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_ENV_TID}/${ENV} | cat)
           aws s3 sync build/ s3://${BUCKET_NAME}/
           aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
