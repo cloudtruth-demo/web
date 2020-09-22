@@ -37,14 +37,14 @@ jobs:
       # Note that contents of .env are exposed in webapp, so while we treat the
       # TID as secret, it technically doesn't have to be
       - name: Configure react
-        run: curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_DOTENV_TID}/${ENV} > .env
+        run: curl -sfL https://api.cloudtruth.com/t/${DEPLOY_WEB_DOTENV_TID}/${ENV} > .env
 
       - name: Build react
         run: yarn build
 
       - name: Deploy to S3
         run: |
-          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | sed 's/&quot;//g' | cat)
-          source <(curl -sfL https://ctcaas-graph.cloudtruth.com/t/${DEPLOY_WEB_ENV_TID}/${ENV} | cat)
+          source <(curl -sfL https://api.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | sed 's/&quot;//g' | cat)
+          source <(curl -sfL https://api.cloudtruth.com/t/${DEPLOY_WEB_ENV_TID}/${ENV} | cat)
           aws s3 sync build/ s3://${BUCKET_NAME}/
           aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
