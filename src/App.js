@@ -11,7 +11,7 @@ function App() {
           <p>
               Web live config:
           </p>
-          <Svc address={"https://ctcaas-graph.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV}/>
+          <Svc address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV}/>
         <p>
           Service demo1:
         </p>
