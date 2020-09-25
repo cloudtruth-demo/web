@@ -10,9 +10,18 @@ function App() {
             <p>
                 This is the web application component of the <a
                 href="https://github.com/cloudtruth-demo">CloudTruth Reference
-                Implementation</a>. It is a simple Single Page Application that
-                interacts with a simple JSON service in order to demonstrate a
-                complete system that is configured by CloudTruth.
+                Implementation</a> (presented as a Github Organization). It is a
+                simple Single Page Application that interacts with a simple JSON
+                service in order to demonstrate a complete system that is
+                configured by CloudTruth.  Both the <a
+                href="https://github.com/cloudtruth-demo/web">web client</a> and
+                the <a href="https://github.com/cloudtruth-demo/service">json
+                service</a> are deployed to AWS using Github Actions for CI/CD,
+                which you can browse (.github/workflows/cd.yml) within each
+                repository as a guide for how to integrate CloudTruth with your
+                own CI/CD system.  The system is provisioned in AWS using
+                terraform with the  <a
+                href="https://github.com/cloudtruth-demo/ops">ops repository</a>
             </p>
             <h4>Dynamic configuration within this Web Application</h4>
             <p>
