@@ -1,10 +1,14 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
   height: 20vmin;
   pointer-events: none;
+}
+
+.App-logo-holder {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +39,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.SVC-block {
+  display: flex;
+  justify-content: left;
+}
+
+.Top-level {
+  display: flex;
+  justify-content: center;
 }
