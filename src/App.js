@@ -44,7 +44,6 @@ function App() {
                 <div className="SVC-block">
                     <Svc address={process.env.REACT_APP_DEMO1_ADDRESS}/>
                 </div>
-                <h4></h4>
             </div>
         </div>
     );
