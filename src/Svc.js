@@ -33,7 +33,7 @@ function Svc(props) {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        return <ReactJson theme="colors" name={false} collapsed={false} enableClipboard={false} src={data} />
+        return <ReactJson theme="solarized" name={false} collapsed={false} enableClipboard={false} src={data} />
     }
 }
 
