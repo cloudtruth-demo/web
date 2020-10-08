@@ -6,16 +6,13 @@ function Svc(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [data, setData] = useState({});
 
-    // Note: the empty deps array [] means
-    // this useEffect will run once
-    // similar to componentDidMount()
     useEffect(() => {
         fetch(props.address)
             .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    console.log(result);
+                    console.log(props);
                     setData(result);
                 },
                 // Note: it's important to handle errors here
@@ -26,7 +23,7 @@ function Svc(props) {
                     setError(error);
                 }
             )
-    }, [props.address])
+    }, [props])
 
     if (error) {
         return <div>Error: {error.message}</div>;
