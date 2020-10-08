@@ -1,15 +1,18 @@
-import React from 'react';
-import logo from './logo.png';
+import React, { useState } from 'react';
+import logo from './ctlogo.png';
 import './App.css';
 import Svc from './Svc';
+import useInterval from 'use-interval';
 
 function App() {
+    const [count, setCount] = useState(0);
+    useInterval(() => { setCount(count + 1); }, process.env.REACT_APP_POLLING_INTERVAL);
+
     return (
         <div className="Top-level">
             <div className="App">
-                <div className="App-logo-holder">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                </div>
+                <img src={logo} className="App-logo" alt="logo"/>
+                <h3>CloudTruth Demo Application</h3>
                 <p>This is the web application component of the <a href="https://github.com/cloudtruth-demo">CloudTruth Reference
                 Implementation</a> (presented as a Github Organization).</p>
                 <ul>
@@ -30,7 +33,7 @@ function App() {
                     <li>Changes to the template or the parameters it references will be picked up immediately and shown below:</li>
                 </ul>
                 <div className="SVC-block">
-                    <Svc address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV}/>
+                    <Svc address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV} count={count}/>
                 </div>
                 <h4>Static and Dynamic configuration within a Service</h4>
                 <p>The following JSON block is fetched from a simple JSON service ({process.env.REACT_APP_DEMO1_ADDRESS})</p>
@@ -42,8 +45,9 @@ function App() {
                     <li>Changes to the live configuration will take affect immediately</li>
                 </ul>
                 <div className="SVC-block">
-                    <Svc address={process.env.REACT_APP_DEMO1_ADDRESS}/>
+                    <Svc address={process.env.REACT_APP_DEMO1_ADDRESS} count={count}/>
                 </div>
+                <p>For more information, visit <a href="https://docs.cloudtruth.com/demo-guide">Guide to the CloudTruth Demo</a></p>
             </div>
         </div>
     );
