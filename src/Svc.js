@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ReactJson from 'react-json-view'
+import ReactJson from 'react-json-view';
+import './Svc.css';
 
 function Svc(props) {
     const [error, setError] = useState(null);
@@ -30,7 +31,7 @@ function Svc(props) {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        return <ReactJson theme="solarized" name={false} collapsed={false} enableClipboard={false} src={data} />
+        return <div className="Svc"><ReactJson theme="summerfruit:inverted" name={false} collapsed={false} enableClipboard={false} src={data} /></div>
     }
 }
 
