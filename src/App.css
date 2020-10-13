@@ -13,6 +13,11 @@
   color: #61dafb;
 }
 
+.CTChart-block {
+  display: flex;
+  justify-content: left;
+}
+
 .SVC-block {
   display: flex;
   justify-content: left;
