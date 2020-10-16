@@ -11,7 +11,7 @@ function App() {
 
     return (
         <div className="Top-level">
-            <div className="App" style={{backgroundColor: process.env.REACT_APP_BACKGROUND_COLOR}>
+            <div className="App" style={{backgroundColor: process.env.REACT_APP_BACKGROUND_COLOR}}>
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h3>CloudTruth Demo Application</h3>
                 <p>This is the web application component of the <a href="https://github.com/cloudtruth-demo">CloudTruth Reference
