@@ -10,7 +10,7 @@ function App() {
     useInterval(() => { setCount(count + 1); }, process.env.REACT_APP_POLLING_INTERVAL);
 
     return (
-        <div className="Top-level">
+        <div className="Top-level" style={{backgroundColor: process.env.REACT_APP_BACKGROUND_COLOR}>
             <div className="App">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h3>CloudTruth Demo Application</h3>
