@@ -24,7 +24,7 @@ jobs:
           else
             env="development"
           fi
-          echo "::set-env name=ENV::${env}"
+          echo "ENV=${env}" >> $GITHUB_ENV
 
       - name: Use Node.js
         uses: actions/setup-node@v1
