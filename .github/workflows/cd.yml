@@ -3,9 +3,7 @@ name: CD
 on: [push]
 
 env:
-  DEPLOY_AWS_ENV_TID: ${{ secrets.DEPLOY_AWS_ENV_TID }}
-  DEPLOY_WEB_ENV_TID: ${{ secrets.DEPLOY_WEB_ENV_TID }}
-  DEPLOY_WEB_DOTENV_TID: ${{ secrets.DEPLOY_WEB_DOTENV_TID }}
+  CT_API_KEY: ${{ secrets.CT_API_KEY }}
 
 jobs:
 
@@ -24,8 +22,12 @@ jobs:
           else
             env="development"
           fi
-          echo "::set-env name=ENV::${env}"
-
+          echo "ENV=${env}" >> $GITHUB_ENV
+      - name: Install cloudtruth cli
+        run: |
+          # Temporarily in s3 till we publish https://github.com/cloudtruth/cloudtruth-cli
+          curl -Lsf https://ctdemo-development-sample-data.s3.amazonaws.com/bin/cloudtruth -o /tmp/cloudtruth
+          chmod +x /tmp/cloudtruth
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -37,14 +39,14 @@ jobs:
       # Note that contents of .env are exposed in webapp, so while we treat the
       # TID as secret, it technically doesn't have to be
       - name: Configure react
-        run: curl -sfL https://api.cloudtruth.com/t/${DEPLOY_WEB_DOTENV_TID}/${ENV} > .env
+        run: /tmp/cloudtruth -e ${ENV} template get deploy.web_dotenv  > .env
 
       - name: Build react
         run: yarn build
 
       - name: Deploy to S3
         run: |
-          source <(curl -sfL https://api.cloudtruth.com/t/${DEPLOY_AWS_ENV_TID}/${ENV} | sed 's/&quot;//g' | cat)
-          source <(curl -sfL https://api.cloudtruth.com/t/${DEPLOY_WEB_ENV_TID}/${ENV} | cat)
+          source <(/tmp/cloudtruth -e ${ENV} template get deploy.aws_credentials_env)
+          source <(/tmp/cloudtruth -e ${ENV} template get deploy.web_env)
           aws s3 sync build/ s3://${BUCKET_NAME}/
           aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
