@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import logo from './ctlogo.png';
-import './App.css';
+import './styles.css';
 import Svc from './Svc';
 import CTChart from './CTChart';
+import logo from './octo-cat.jpg';
+import params from './app-params.jpg';
 import useInterval from 'use-interval';
 
 function App() {
@@ -10,48 +11,105 @@ function App() {
     useInterval(() => { setCount(count + 1); }, process.env.REACT_APP_POLLING_INTERVAL);
 
     return (
-        <div className="Top-level">
-            <div className="App" style={{backgroundColor: process.env.REACT_APP_BACKGROUND_COLOR}}>
-                <img src={logo} className="App-logo" alt="logo"/>
-                <h3>CloudTruth Demo Application</h3>
-                <p>This is the web application component of the <a href="https://github.com/cloudtruth-demo">CloudTruth Reference
-                Implementation</a> (presented as a Github Organization).</p>
-                <ul>
-                    <li>This application interacts with a simple JSON service in order to demonstrate 
-                    a complete system configured by CloudTruth</li>
-                    <li>Both the <a href="https://github.com/cloudtruth-demo/web">web client</a> and
-                    the <a href="https://github.com/cloudtruth-demo/service">json
-                    service</a> are deployed to AWS using Github Actions for CI/CD</li>
-                    <li>You can browse (.github/workflows/cd.yml) within each repository as a guide for 
-                    integrating CloudTruth with your own CI/CD system</li>
-                    <li>The system is provisioned in AWS using terraform with the <a
-                    href="https://github.com/cloudtruth-demo/ops">ops repository</a></li>
-                </ul>
-                <h4>Dynamic configuration within the Web Application</h4>
-                <p> The following chart is configured via JSON fetched directly by the web application from a CloudTruth configuration template</p>
-                <ul>
-                    <li>This demonstrates the use of a CloudTruth template as a dynamic source of configuration for a web application at runtime</li>
-                    <li>Changes to the template or the parameters it references will be picked up immediately and shown below:</li>
-                </ul>
-                <div className="SVC-block">
+             <div className="Top-level">
+                 <div class="header-block">
+                 </div>
+                 <div class="title-block">
+                     <div class="title-text">
+                         <h1>Welcome to the ACME Company</h1>
+                     </div>
+                 </div>
+                 <div class="sub-title-block">
+                     <h3>A fictional SaaS app for managing widgets and anvils</h3>
+                 </div>
+                 <div class="sub-text-block">
+                     <div class="sub-text-text">
+                         <p>ACME's Director of Cloud Infrastructure Engineeering
+                            chose CloudTruth to centrally manage parameters,
+                            templates, enviorment variables, and secrets with her
+                            existing cloud configuration tools.</p>
+                     </div>
+                 </div>
+                 <div class="summary-block">
+                     <div class="summay-text">
+                         <p>AMCE is a Terraform shop, and also uses SSM Parameter Store and JSON files
+                            in S3 for managing configuration</p>
+                     </div>
+                 </div>
+                 <div class="intro-block">
+                     <div class="intro-text">
+                         <h2>This is the web application component of the 
+                             <a href="https://github.com/cloudtruth-demo"> CloudTruth Reference Implementation</a></h2>
+                         <ul>
+                             <li>This application interacts with a simple JSON service in order to demonstrate 
+                                 a complete system configured by CloudTruth</li>
+                             <li>Both the <a href="https://github.com/cloudtruth-demo/web">web client</a> and
+                                 the <a href="https://github.com/cloudtruth-demo/service">json
+                                 service</a> are deployed to AWS using Github Actions for CI/CD</li>
+                             <li>You can browse (.github/workflows/cd.yml) within each repository as a guide for 
+                                 integrating CloudTruth with your own CI/CD system</li>
+                             <li>The system is provisioned in AWS using terraform with the <a
+                                 href="https://github.com/cloudtruth-demo/ops">ops repository</a></li>
+                         </ul>
+                     </div>    
+                     <div class="octo-cat-logo">
+                         <img src={logo} alt="logo"/>
+                     </div>
+                 </div>
+                 <div class="app-block-top">
+                     <div class="app-text">
+                         <h2>Dynamic configuration within the Web Application</h2>
+                         <h4> The following chart is configured via JSON fetched directly by the web application
+                              from a CloudTruth configuration template</h4>
+                         <ul>
+                             <li>This demonstrates the use of a CloudTruth template as a dynamic source of configuration
+                                 for a web application at runtime</li>
+                             <li>Changes to the template or the parameters it references will be picked up immediately
+                                 and shown below:</li>
+                         </ul>
+                 </div>
+             </div>
+             <div class="app-block-bottom">
+                 <div class="app-params">
+                     <img src={params} alt="params"/>
+                 </div>
+                 <div className="SVC-block">
                     <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV} count={count}/>
-                </div>
-                <h4>Static and Dynamic configuration within a Service</h4>
-                <p>The following JSON block is fetched from a simple JSON service ({process.env.REACT_APP_DEMO1_ADDRESS})</p>
-                <ul>
-                    <li>This JSON block represents the current configuration for the service</li>
-                    <li>This configuration consists of a static portion supplied at deploy time, 
-                    and live portion fetched from a CloudTruth template</li>
-                    <li>Changes to the static configuration will take effect the next time the service is deployed</li>
-                    <li>Changes to the live configuration will take effect immediately</li>
-                </ul>
+                 </div>
+             </div>
+             <div class="video-title">         
+                 <h5>How it Works</h5>
+             </div>
+             <div class="video-block">
+                 <iframe width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             </div>
+             <div class="service-block">
+                 <div class="intro-text">
+                     <h2>Static and Dynamic configuration within a Service</h2>
+                     <h4>The following JSON block is fetched from a simple JSON service
+                         (<a href="https://github.com/cloudtruth-demo">https://demo1.demo.cloudtruth.dev</a>)</h4>
+                     <ul>
+                         <li>This JSON block represents the current configuration for the service</li>
+                         <li>This configuration consists of a static portion supplied at deploy time, 
+                             and live portion fetched from a CloudTruth template</li>
+                         <li>Changes to the static configuration will take effect the next time the
+                             service is deployed</li>
+                         <li>Changes to the live configuration will take effect immediately</li>
+                     </ul>
+                </div> 
                 <div className="SVC-block">
                     <Svc address={process.env.REACT_APP_DEMO1_ADDRESS} count={count}/>
                 </div>
-                <p>For more information, visit <a href="https://docs.cloudtruth.com/demo-guide">Guide to the CloudTruth Demo</a></p>
+            </div>
+            <div class="bottom-block">
+                <div class="sub-text-text">
+                    <p>Learn more and sign-up for our early access program at <a href="https://cloudtruth.com">CloudTruth.com</a></p>
+                </div>
             </div>
         </div>
     );
 }
 
 export default App;
+
