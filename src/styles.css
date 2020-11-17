@@ -1,0 +1,184 @@
+
+body {
+    background-color: #292935;
+    background-image: url("./acme_background.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+}
+
+a:link {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+h1 {
+   color: #999999;
+   font-family: ariel, sans-serif;
+   font-size: 72px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h2 {
+   color: #555555;
+   font-family: arial, sans-serif;
+   font-size: 36px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h3 {
+   color: #DDAC6A;
+   font-family: arial, sans-serif;
+   font-size: 28px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h4 {
+   color: #555555;
+   font-family: arial, sans-serif;
+   font-size: 24px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+
+h5 {
+   color: #AAAAAA;
+   font-family: arial, sans-serif;
+   font-size: 36px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+
+li {
+   color: #777777;
+   font-family: arial, sans-serif;
+   font-size: 24px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+.header-block {
+    height: 200px;
+}
+
+.title-block {
+    height: 180px;
+    justify-content: center;
+    display: flex; 
+}
+
+.title-text {
+    max-width: 600px;
+}
+
+.sub-title-block {
+    height: 60px;
+    justify-content: center;
+    display: flex; 
+}
+
+.sub-text-block {
+    height: 550px;
+    justify-content: center;
+    display: flex; 
+}
+
+.sub-text-text {
+    max-width: 950px;
+    color: #888888;
+    font-family: arial, sans-serif;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+
+.summary-block {
+    height: 250px;
+    justify-content: center;
+    display: flex;    
+}
+
+.summay-text {
+    max-width: 700px;
+    color: #888888;
+    font-family: arial, sans-serif;
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+
+.intro-block {
+    height: 550px;
+    justify-content: center;
+    display: flex;    
+}
+
+.intro-text {
+    max-width: 520px;
+}
+
+.app-block-top {
+    height: 300px;
+    justify-content: center;
+    display: flex;
+}
+
+.app-text {
+    max-width: 900px;
+}
+
+.app-block-bottom {
+    height: 740px;
+    justify-content: center;
+    display: flex;
+}
+
+.video-title {
+    height: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+.video-block {
+    height: 650px;
+    justify-content: center;
+    display: flex;
+}
+
+.service-block {
+    height: 550px;
+    justify-content: center;
+    display: flex;
+}
+
+.bottom-block {
+    height: 120px;
+    justify-content: center;
+    display: flex;
+}
+
