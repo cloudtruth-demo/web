@@ -103,6 +103,7 @@ li {
 
 .title-block {
     clear: right;
+    float: none;
     height: 180px;
     justify-content: center;
     display: flex; 
