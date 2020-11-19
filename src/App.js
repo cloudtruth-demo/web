@@ -3,6 +3,7 @@ import './styles.css';
 import Svc from './Svc';
 import CTChart from './CTChart';
 import logo from './octo-cat.jpg';
+import ctlogo from './cloudtruth-logo.png';
 import params from './app-params.jpg';
 import useInterval from 'use-interval';
 
