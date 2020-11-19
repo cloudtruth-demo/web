@@ -14,11 +14,6 @@ function App() {
     return (
              <div className="Top-level">
                  <div class="header-block">
-                     <div class="ct-logo-block">
-                         <h6>A reference architecture for the</h6>
-                         <a href="https://cloudtruth.com"><img src={ctlogo} alt="cloudtruth"/></a>
-                         <h6>Configuration Intelligence service</h6>
-                     </div>
                  </div>
                  <div class="title-block">
                      <div class="title-text">
