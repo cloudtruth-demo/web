@@ -102,6 +102,7 @@ li {
 }
 
 .title-block {
+    clear: right;
     height: 180px;
     justify-content: center;
     display: flex; 
