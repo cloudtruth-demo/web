@@ -92,7 +92,6 @@ li {
 
 .header-block {
     height: 200px;
-    float: right;  
 }
 
 .ct-logo-block {
@@ -102,7 +101,6 @@ li {
 }
 
 .title-block {
-    clear:  right;
     height: 180px;
     justify-content: center;
     display: flex; 
