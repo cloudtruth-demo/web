@@ -87,7 +87,7 @@ function App() {
                  <h5>How it Works</h5>
              </div>
              <div class="video-block">
-                 <iframe  title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
+                 <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
              </div>
              <div class="service-block">
