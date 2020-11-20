@@ -43,7 +43,7 @@ h1 {
 h2 {
    color: #555555;
    font-family: arial, sans-serif;
-   font-size: 36px;
+   font-size: 26px;
    margin-top: 0px;
    margin-bottom: 1px;
 }
@@ -59,7 +59,7 @@ h3 {
 h4 {
    color: #555555;
    font-family: arial, sans-serif;
-   font-size: 24px;
+   font-size: 18px;
    margin-top: 0px;
    margin-bottom: 1px;
 }
@@ -85,7 +85,7 @@ h6 {
 li {
    color: #777777;
    font-family: arial, sans-serif;
-   font-size: 24px;
+   font-size: 18px;
    margin-top: 0px;
    margin-bottom: 1px;
 }
@@ -147,7 +147,7 @@ li {
 }
 
 .intro-block {
-    height: 550px;
+    height: 380px;
     justify-content: center;
     display: flex;    
 }
@@ -157,7 +157,7 @@ li {
 }
 
 .app-block-top {
-    height: 300px;
+    height: 200px;
     justify-content: center;
     display: flex;
 }
@@ -167,7 +167,7 @@ li {
 }
 
 .app-block-bottom {
-    height: 740px;
+    height: 705px;
     justify-content: center;
     display: flex;
 }
@@ -179,13 +179,13 @@ li {
 }
 
 .video-block {
-    height: 650px;
+    height: 700px;
     justify-content: center;
     display: flex;
 }
 
 .service-block {
-    height: 550px;
+    height: 500px;
     justify-content: center;
     display: flex;
 }
