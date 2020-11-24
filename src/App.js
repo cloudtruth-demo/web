@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './styles.css';
 import Svc from './Svc';
 import CTChart from './CTChart';
-import logo from './octo-cat.jpg';
 import ctlogo from './cloudtruth-logo.png';
 import params from './app-params.jpg';
 import useInterval from 'use-interval';
@@ -42,26 +41,6 @@ function App() {
                             in S3 for managing configuration</p>
                      </div>
                  </div>
-                 <div class="intro-block">
-                     <div class="intro-text">
-                         <h2>This is the web application component of the 
-                             <a href="https://github.com/cloudtruth-demo"> CloudTruth Reference Implementation</a></h2>
-                         <ul>
-                             <li>This application interacts with a simple JSON service in order to demonstrate 
-                                 a complete system configured by CloudTruth</li>
-                             <li>Both the <a href="https://github.com/cloudtruth-demo/web">web client</a> and
-                                 the <a href="https://github.com/cloudtruth-demo/service">json
-                                 service</a> are deployed to AWS using Github Actions for CI/CD</li>
-                             <li>You can browse (.github/workflows/cd.yml) within each repository as a guide for 
-                                 integrating CloudTruth with your own CI/CD system</li>
-                             <li>The system is provisioned in AWS using terraform with the <a
-                                 href="https://github.com/cloudtruth-demo/ops">ops repository</a></li>
-                         </ul>
-                     </div>    
-                     <div class="octo-cat-logo">
-                         <img src={logo} alt="logo"/>
-                     </div>
-                 </div>
                  <div class="app-block-top">
                      <div class="app-text">
                          <h2>Dynamic configuration within the Web Application</h2>
@@ -73,25 +52,19 @@ function App() {
                              <li>Changes to the template or the parameters it references will be picked up immediately
                                  and shown below:</li>
                          </ul>
+                     </div>
                  </div>
-             </div>
-             <div class="app-block-bottom">
-                 <div class="app-params">
-                     <img src={params} alt="params"/>
-                 </div>
-                 <div className="SVC-block">
-                    <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV} count={count}/>
-                 </div>
-             </div>
-             <div class="video-title">         
-                 <h5>How it Works</h5>
-             </div>
-             <div class="video-block">
-                 <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-             </div>
-             <div class="service-block">
-                 <div class="intro-text">
+                 <div class="app-block-bottom">
+                     <div class="app-params">
+                         <img src={params} alt="params"/>
+                     </div>
+                     <div className="SVC-block">
+                        <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
+                                          "/" + process.env.REACT_APP_ENV} count={count}/>
+                     </div>
+                </div>
+                <div class="service-block">
+                    <div class="intro-text">
                      <h2>Static and Dynamic configuration within a Service</h2>
                      <h4>The following JSON block is fetched from a simple JSON service
                          (<a href="https://github.com/cloudtruth-demo">https://demo1.demo.cloudtruth.dev</a>)</h4>
@@ -104,16 +77,40 @@ function App() {
                          <li>Changes to the live configuration will take effect immediately</li>
                      </ul>
                 </div> 
-                <div className="SVC-block">
-                    <Svc address={process.env.REACT_APP_DEMO1_ADDRESS} count={count}/>
+                    <div className="SVC-block">
+                        <Svc address={process.env.REACT_APP_DEMO1_ADDRESS} count={count}/>
+                    </div>
+                </div>
+                <div class="video-title">         
+                     <h5>How it Works</h5>
+                </div>
+                <div class="video-block">
+                     <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="intro-block">
+                    <div class="intro-text">
+                        <h2>This is the web application component of the 
+                            <a href="https://github.com/cloudtruth-demo"> CloudTruth Reference Implementation</a></h2>
+                        <ul>
+                            <li>This application interacts with a simple JSON service in order to demonstrate 
+                                a complete system configured by CloudTruth</li>
+                            <li>Both the <a href="https://github.com/cloudtruth-demo/web">web client</a> and
+                                the <a href="https://github.com/cloudtruth-demo/service">json
+                                service</a> are deployed to AWS using Github Actions for CI/CD</li>
+                            <li>You can browse (.github/workflows/cd.yml) within each repository as a guide for 
+                                integrating CloudTruth with your own CI/CD system</li>
+                            <li>The system is provisioned in AWS using terraform with the <a
+                                href="https://github.com/cloudtruth-demo/ops">ops repository</a></li>
+                        </ul>
+                    </div>    
+                </div>
+                <div class="bottom-block">
+                    <div class="sub-text-text">
+                        <p>Learn more and sign-up for our early access program at <a href="https://cloudtruth.com">CloudTruth.com</a></p>
+                    </div>
                 </div>
             </div>
-            <div class="bottom-block">
-                <div class="sub-text-text">
-                    <p>Learn more and sign-up for our early access program at <a href="https://cloudtruth.com">CloudTruth.com</a></p>
-                </div>
-            </div>
-        </div>
     );
 }
 
