@@ -26,9 +26,8 @@ jobs:
 
       - name: Install cloudtruth cli
         run: |
-          # Temporarily in s3 till we publish https://github.com/cloudtruth/cloudtruth-cli
-          curl -Lsf https://ctdemo-development-sample-data.s3.amazonaws.com/bin/cloudtruth -o /tmp/cloudtruth
-          chmod +x /tmp/cloudtruth
+          curl -Lsf https://github.com/cloudtruth/cloudtruth-cli/releases/download/0.1.0/cloudtruth_0.1.0_amd64.deb  -o /tmp/cloudtruth.deb
+          sudo dpkg -i /tmp/cloudtruth.deb
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -41,14 +40,14 @@ jobs:
       # Note that contents of .env are exposed in webapp, so while we treat the
       # TID as secret, it technically doesn't have to be
       - name: Configure react
-        run: /tmp/cloudtruth -e ${ENV} template get deploy.web_dotenv  > .env
+        run: cloudtruth -e ${ENV} template get deploy.web_dotenv  > .env
 
       - name: Build react
         run: yarn build
 
       - name: Deploy to S3
         run: |
-          source <(/tmp/cloudtruth -e ${ENV} template get deploy.aws_credentials_env)
-          source <(/tmp/cloudtruth -e ${ENV} template get deploy.web_env)
+          source <(cloudtruth -e ${ENV} template get deploy.aws_credentials_env)
+          source <(cloudtruth -e ${ENV} template get deploy.web_env)
           aws s3 sync build/ s3://${BUCKET_NAME}/
           aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
