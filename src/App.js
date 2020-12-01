@@ -47,7 +47,7 @@ function App() {
                 </ul>
                 <div className="SVC-block">
                     <Svc address={process.env.REACT_APP_DEMO1_ADDRESS} count={count}/>
-                </div>
+                </div> 
                 <p>For more information, visit <a href="https://docs.cloudtruth.com/demo-guide">Guide to the CloudTruth Demo</a></p>
             </div>
         </div>
