@@ -25,7 +25,7 @@ function App() {
                      </div>
                  </div>
                  <div class="sub-title-block">
-                     <h3>A fictional SaaS app for managing widgets and anvils</h3>
+                     <h3>A fictional internal SaaS app for counting hammers, anvils and rockets.</h3>
                  </div>
                  <div class="sub-text-block">
                      <div class="sub-text-text">
@@ -37,8 +37,8 @@ function App() {
                  </div>
                  <div class="summary-block">
                      <div class="summay-text">
-                         <p>AMCE is a Terraform shop, and also uses SSM Parameter Store and JSON files
-                            in S3 for managing configuration</p>
+                         <p>AMCE uses Terraform to provision their cloud environment, AWS SSM Param Store for secrets and JSON files
+                            in S3 for managing application configuration.</p>
                      </div>
                  </div>
                  <div class="app-block-top">
