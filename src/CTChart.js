@@ -1,6 +1,5 @@
 import './CTChart.css';
 import React, { useState, useEffect } from 'react';
-import ReactJson from 'react-json-view';
 import Charts from "react-apexcharts";
 
 function CTChart(props) {
@@ -52,12 +51,7 @@ function CTChart(props) {
         return <div>Loading...</div>;
     } else {
         return <div className="row">
-                   <div className="column">
-                       <Charts options={options} series={series} type='radialBar' height='350'/>
-                   </div>
-                   <div className="column">
-                       <ReactJson theme="summerfruit:inverted" name={false} collapsed={false} enableClipboard={false} src={data} />
-                   </div>
+                   <Charts options={options} series={series} type='radialBar' height='350'/>
                </div>
     } 
 }

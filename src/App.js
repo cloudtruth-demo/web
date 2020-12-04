@@ -54,13 +54,17 @@ function App() {
                          </ul>
                      </div>
                  </div>
+                 <div class="app-block-middle">
+                     <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
+                                        "/" + process.env.REACT_APP_ENV} count={count}/>
+                 </div>
                  <div class="app-block-bottom">
                      <div class="app-params">
                          <img src={params} alt="params"/>
                      </div>
-                     <div className="SVC-block">
-                        <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
-                                          "/" + process.env.REACT_APP_ENV} count={count}/>
+                     <div class="SVC-block">
+                          <Svc address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
+                                             "/" + process.env.REACT_APP_ENV} count={count}/>
                      </div>
                 </div>
                 <div class="service-block">
@@ -115,4 +119,3 @@ function App() {
 }
 
 export default App;
-
