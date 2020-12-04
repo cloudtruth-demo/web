@@ -5,7 +5,6 @@ import Charts from "react-apexcharts";
 function CTChart(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState({});
     const [series, setSeries] = useState([0]);
     const [options, setOptions] = useState({});
 
@@ -16,7 +15,6 @@ function CTChart(props) {
                 (result) => {
                     setIsLoaded(true);
                     console.log(props);
-                    setData(result);
                     setSeries(result.series);
                     setOptions( { chart: { height: 350, type: 'radialBar', },
                                   plotOptions: { radialBar: { offsetY: 0, startAngle: 0, endAngle: 270, 
