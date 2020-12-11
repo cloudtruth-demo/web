@@ -58,6 +58,12 @@ function App() {
                      <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
                                         "/" + process.env.REACT_APP_ENV} count={count}/>
                  </div>
+                 <div class="app-info-bottom">
+                         <ul>
+                             <li>The CloudTruth parameter management screen is shown on the bottom left</li>
+                             <li>The CloudTruth template results in JSON format are shown on the botton right</li>
+                         </ul>
+                 </div>
                  <div class="app-block-bottom">
                      <div class="app-params">
                          <img src={params} alt="params"/>

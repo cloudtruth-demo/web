@@ -73,7 +73,7 @@ h5 {
 }
 
 h6 {
-   color: #555555;
+   color: #CCCCCC;
    font-family: arial, sans-serif;
    font-size: 12px;
    margin-top: 21px;
@@ -161,14 +161,20 @@ li {
     display: flex;
 }
 
+.app-info-bottom {
+    height: 70px;
+    justify-content: center;
+    display: flex;
+}
+
 .app-block-bottom {
-    height: 510px;
+    height: 480px;
     justify-content: center;
     display: flex;
 }
 
 .service-block {
-    height: 500px;
+    height: 450px;
     justify-content: center;
     display: flex;
 }
