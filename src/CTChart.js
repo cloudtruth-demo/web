@@ -19,7 +19,7 @@ function CTChart(props) {
                     console.log(props);
                     setData(result);
                     setSeries(result.series);
-                    setOptions( { chart: { height: 350, type: 'radialBar', },
+                    setOptions( { chart: { width: '100%', height: 350, type: 'radialBar', },
                                   plotOptions: { radialBar: { offsetY: 0, startAngle: 0, endAngle: 270, 
                                                      hollow: { margin: 5, size: '30%', background: 'transparent', image: undefined, },
                                                      dataLabels: { name: { show: false, }, value: { show: false, } }

@@ -34,7 +34,9 @@ function App() {
                     <li>Changes to the template or the parameters it references will be picked up immediately and shown below:</li>
                 </ul>
                 <div className="SVC-block">
-                    <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV} count={count}/>
+                    <div className="app-chart">
+                        <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID + "/" + process.env.REACT_APP_ENV} count={count}/>
+                    </div>
                 </div>
                 <h4>Static and Dynamic configuration within a Service</h4>
                 <p>The following JSON block is fetched from a simple JSON service ({process.env.REACT_APP_DEMO1_ADDRESS})</p>
