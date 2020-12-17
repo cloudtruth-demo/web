@@ -18,6 +18,10 @@
   justify-content: left;
 }
 
+.app-chart {
+    width: 350px;
+}
+
 .SVC-block {
   display: flex;
   justify-content: left;
