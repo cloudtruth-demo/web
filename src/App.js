@@ -138,7 +138,7 @@ function App() {
                      <div class="use-case-header">
                      </div>
                      <div class="cicd-block">
-                         <div class="cicd-text">
+                         <div class="cicd-text" id="gacicd">
                              <h2>Deployment to AWS using <a href="https://github.com/cloudtruth-demo">Github Actions for CI/CD</a></h2>
                              <ul>
                                  <li>This application interacts with a simple JSON service in order to demonstrate 
