@@ -4,6 +4,10 @@ import Svc from './Svc';
 import CTChart from './CTChart';
 import ctlogo from './cloudtruth-logo.png';
 import params from './app-params.jpg';
+import cicdrepos from './cicd-repos.jpg';
+import cicdactions from './cicd-actions.jpg';
+import cfgmapd from './configmap-demo.jpg';
+import cfgmapc from './configmap-cmd.jpg';
 import useInterval from 'use-interval';
 
 function App() {
@@ -48,7 +52,7 @@ function App() {
                              <li><a href="#webapp">Dynamic configuration with a web application</a></li>
                              <li><a href="#websvc">Static and dynamic configuration of a service</a></li>
                              <li><a href="#gacicd">Deployment to AWS using Github Actions for CI/CD</a></li>
-                             <li><a href="#kubapp">Configuration of a Kubernetes application</a></li>
+                             <li><a href="#kubapp">Automatic updates for Kubernetes ConfigMaps</a></li>
                          </ol>
                      </div>
                  </div>
@@ -97,8 +101,8 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                         <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
-                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         <iframe title="cloudtruth video" width="680" height="424" src="https://player.vimeo.com/video/453394824?autoplay=0&autopause=0"
+                                 frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
                  <div class="use-case">
@@ -130,8 +134,8 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                         <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
-                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         <iframe title="cloudtruth video" width="680" height="424" src="https://player.vimeo.com/video/453394824?autoplay=0&autopause=0"
+                                 frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
                  <div class="use-case">
@@ -153,6 +157,14 @@ function App() {
                              </ul>
                          </div>    
                      </div>
+                     <div class="use-case-bottom">
+                         <div class="use-case-image-left">
+                             <img src={cicdrepos} alt="cicd repos"/>
+                         </div>
+                         <div class="use-case-image-right">
+                             <img src={cicdactions} alt="cicd actions"/>
+                         </div>
+                     </div>
                  </div>
                  <div class="video">
                      <div class="video-header">
@@ -161,8 +173,44 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                         <iframe title="cloudtruth video" width="680" height="424" src="https://www.youtube.com/embed/2v2SW80M-Qs" frameborder="0"
-                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         <iframe title="cloudtruth video" width="680" height="424" src="https://player.vimeo.com/video/453394824?autoplay=0&autopause=0"
+                                 frameborder="0" allowfullscreen></iframe>
+                     </div>
+                 </div>
+                 <div class="use-case">
+                     <div class="use-case-header">
+                     </div>
+                     <div class="kube-block">
+                         <div class="kube-text" id="kubapp">
+                             <h2>Automatic updates for Kubernetes ConfigMaps</h2>
+                             <ul>
+                                 <li>The CloudTruth integration for Kubernetes pushes parameter updates into ConfigMaps and Secrets.</li>
+                                 <li>This integration uses naming conventions to automate the delivery of configuration</li>
+                                 <li>You can browse (https://github.com/cloudtruth/kubetruth) as a guide for 
+                                     integrating CloudTruth with your Kubernetes cluster</li>
+                                 <li>The KubeTruth code is hosted in the <a
+                                     href="https://github.com/cloudtruth/kubetruth">KubeTruth repository</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="use-case-bottom">
+                         <div class="use-case-image-left">
+                             <img src={cfgmapd} alt="config map demo"/>
+                         </div>
+                         <div class="use-case-image-right">
+                             <img src={cfgmapc} alt="config map cmd"/>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="video">
+                     <div class="video-header">
+                     </div>
+                     <div class="video-title">         
+                         <h5>How it Works</h5>
+                     </div>
+                     <div class="video-block">
+                         <iframe title="cloudtruth video" src="https://share.descript.com/embed/z7RmoJYBdip" width="680" height="424"
+                                 frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
                  <div class="use-case">

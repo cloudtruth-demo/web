@@ -140,6 +140,20 @@ li {
     max-width: 480px;
 }
 
+.use-case-bottom {
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.use-case-image-left {
+    padding-right: 10px;
+}
+
+.use-case-image-right {
+    padding-left: 10px;
+}
+
 .summary-block {
     height: 130px;
     justify-content: center;
@@ -236,13 +250,23 @@ li {
 }
 
 .cicd-block {
-    height: 300px;
+    height: 250px;
     justify-content: center;
     display: flex;    
 }
 
 .cicd-text {
-    max-width: 520px;
+    max-width: 640px;
+}
+
+.kube-block {
+    height: 250px;
+    justify-content: center;
+    display: flex;    
+}
+
+.kube-text {
+    max-width: 600px;
 }
 
 .bottom-header {
