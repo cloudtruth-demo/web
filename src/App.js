@@ -173,8 +173,8 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                         <iframe title="cloudtruth video" width="680" height="424" src="https://player.vimeo.com/video/453394824?autoplay=0&autopause=0"
-                                 frameborder="0" allowfullscreen></iframe>
+                          <iframe src="https://share.descript.com/embed/0MdLfB789vM" width="640" height="360"
+                                  frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
                  <div class="use-case">
