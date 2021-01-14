@@ -173,7 +173,7 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                          <iframe src="https://share.descript.com/embed/0MdLfB789vM" width="640" height="360"
+                          <iframe title="cloudtruth cicd video" src="https://share.descript.com/embed/0MdLfB789vM" width="640" height="360"
                                   frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
@@ -209,7 +209,7 @@ function App() {
                          <h5>How it Works</h5>
                      </div>
                      <div class="video-block">
-                         <iframe title="cloudtruth video" src="https://share.descript.com/embed/z7RmoJYBdip" width="680" height="424"
+                         <iframe title="kubetruth video" src="https://share.descript.com/embed/z7RmoJYBdip" width="680" height="424"
                                  frameborder="0" allowfullscreen></iframe>
                      </div>
                  </div>
