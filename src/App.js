@@ -9,7 +9,7 @@ import cicdactions from './cicd-actions.jpg';
 import cfgmapd from './configmap-demo.jpg';
 import cfgmapc from './configmap-cmd.jpg';
 import useInterval from 'use-interval';
-
+ 
 function App() {
     const [count, setCount] = useState(0);
     useInterval(() => { setCount(count + 1); }, process.env.REACT_APP_POLLING_INTERVAL);
