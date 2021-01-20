@@ -1,0 +1,293 @@
+
+body {
+    background-color: #292933;
+    background-image: url("./acme-background.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+}
+
+a:link {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: #DDAC6A;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+h1 {
+   color: #999999;
+   font-family: ariel, sans-serif;
+   font-size: 48px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h2 {
+   color: #555555;
+   font-family: arial, sans-serif;
+   font-size: 26px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h3 {
+   color: #DDAC6A;
+   font-family: arial, sans-serif;
+   font-size: 20px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h4 {
+   color: #555555;
+   font-family: arial, sans-serif;
+   font-size: 18px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h5 {
+   color: #AAAAAA;
+   font-family: arial, sans-serif;
+   font-size: 36px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+h6 {
+   color: #CCCCCC;
+   font-family: arial, sans-serif;
+   font-size: 12px;
+   margin-top: 21px;
+   margin-right: 7px;
+   margin-left: 7px;
+}
+
+li {
+   color: #777777;
+   font-family: arial, sans-serif;
+   font-size: 18px;
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+
+.header-block {
+    height: 160px;
+}
+
+.ct-logo-block {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.title-block {
+    height: 140px;
+    justify-content: center;
+    display: flex; 
+}
+
+.title-text {
+    max-width: 380px;
+}
+
+.sub-title-block {
+    height: 30px;
+    justify-content: center;
+    display: flex; 
+}
+
+.sub-text-block {
+    height: 240px;
+    justify-content: center;
+    display: flex; 
+}
+
+.sub-text-text {
+    max-width: 750px;
+    color: #888888;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+
+.use-case-block {
+    height: 200px;
+    justify-content: center;
+    display: flex;    
+}
+
+.use-case-text {
+    max-width: 500px;
+}
+
+.use-case-list-text {
+   font-size: 20px;
+}
+
+.use-case-bottom {
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.use-case-image-left {
+    padding-right: 10px;
+}
+
+.use-case-image-right {
+    padding-left: 10px;
+}
+
+.summary-block {
+    height: 130px;
+    justify-content: center;
+    display: flex;    
+}
+
+.summay-text {
+    max-width: 700px;
+    color: #888888;
+    font-family: arial, sans-serif;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+
+.use-case {
+    background-image: url("./white-background.jpg");
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-position: center top;
+}
+
+.use-case-header {
+    height: 30px;
+}
+
+.app-block-top {
+    height: 200px;
+    justify-content: center;
+    display: flex;
+}
+
+.app-text {
+    max-width: 600px;
+}
+
+.app-block-middle {
+    height: 340px;
+    justify-content: center;
+    display: flex;
+}
+
+.app-chart {
+    width: 350px;
+}
+
+.app-info-bottom {
+    height: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+.app-block-bottom {
+    height: 450px;
+    justify-content: center;
+    display: flex;
+}
+
+.svc-block-top {
+    height: 240px;
+    justify-content: center;
+    display: flex;
+}
+
+.svc-block-bottom {
+    height: 300px;
+    justify-content: center;
+    display: flex;
+}
+
+.video {
+    background-image: url("./video-background.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+}
+
+.video-header {
+    height: 120px;
+}
+
+.video-title {
+    height: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+.video-block {
+    height: 520px;
+    justify-content: center;
+    display: flex;
+}
+
+.cicd-block {
+    height: 250px;
+    justify-content: center;
+    display: flex;    
+}
+
+.cicd-text {
+    max-width: 600px;
+}
+
+.kube-block {
+    height: 250px;
+    justify-content: center;
+    display: flex;    
+}
+
+.kube-text {
+    max-width: 680px;
+}
+
+.bottom-header {
+    height: 30px;
+}
+
+.bottom-block {
+    height: 80px;
+    justify-content: center;
+    display: flex;
+}
+
+.bottom {
+    background-image: url("./footer-background.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+}
+
