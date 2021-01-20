@@ -260,7 +260,7 @@ li {
 }
 
 .cicd-text {
-    max-width: 640px;
+    max-width: 600px;
 }
 
 .kube-block {
@@ -270,7 +270,7 @@ li {
 }
 
 .kube-text {
-    max-width: 600px;
+    max-width: 680px;
 }
 
 .bottom-header {
