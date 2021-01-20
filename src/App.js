@@ -61,7 +61,7 @@ function App() {
                      </div>
                      <div class="app-block-top">
                          <div class="app-text" id="webapp">
-                             <h2>Dynamic configuration of a Web Application</h2>
+                             <h2>Dynamic configuration of a web application</h2>
                              <h4>The following chart is configured via JSON fetched directly by the web application
                                  from a CloudTruth configuration template</h4>
                              <ul>
