@@ -137,7 +137,11 @@ li {
 }
 
 .use-case-text {
-    max-width: 480px;
+    max-width: 500px;
+}
+
+.use-case-list-text {
+   font-size: 20px;
 }
 
 .use-case-bottom {
@@ -192,7 +196,7 @@ li {
 }
 
 .app-block-middle {
-    height: 350px;
+    height: 340px;
     justify-content: center;
     display: flex;
 }
@@ -202,7 +206,7 @@ li {
 }
 
 .app-info-bottom {
-    height: 70px;
+    height: 80px;
     justify-content: center;
     display: flex;
 }
