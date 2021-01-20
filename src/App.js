@@ -49,7 +49,7 @@ function App() {
                      <div class="use-case-text">
                          <h3>ACME uses CloudTruth Configuration Intelligence to solve the following problems:</h3>
                          <ol>
-                             <li class="use-case-list-text"><a href="#webapp">Dynamic configuration with a web application</a></li>
+                             <li class="use-case-list-text"><a href="#webapp">Dynamic configuration of a web application</a></li>
                              <li class="use-case-list-text"><a href="#websvc">Static and dynamic configuration of a service</a></li>
                              <li class="use-case-list-text"><a href="#gacicd">Cloud deployment using standard CI/CD tools</a></li>
                              <li class="use-case-list-text"><a href="#kubapp">Management of applications & service configuration for Kubernetes</a></li>
@@ -61,7 +61,7 @@ function App() {
                      </div>
                      <div class="app-block-top">
                          <div class="app-text" id="webapp">
-                             <h2>Dynamic configuration within a Web Application</h2>
+                             <h2>Dynamic configuration of a Web Application</h2>
                              <h4>The following chart is configured via JSON fetched directly by the web application
                                  from a CloudTruth configuration template</h4>
                              <ul>
