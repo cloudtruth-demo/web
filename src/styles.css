@@ -89,6 +89,9 @@ li {
    margin-bottom: 1px;
 }
 
+.top-level {
+}
+
 .header-block {
     height: 160px;
 }
@@ -165,7 +168,7 @@ li {
 }
 
 .summay-text {
-    max-width: 700px;
+    max-width: 800px;
     color: #888888;
     font-family: arial, sans-serif;
     font-size: 20px;
