@@ -140,7 +140,7 @@ li {
 }
 
 .use-case-text {
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .use-case-list-text {
@@ -273,7 +273,17 @@ li {
 }
 
 .kube-text {
-    max-width: 680px;
+    max-width: 640px;
+}
+
+.key-block {
+    height: 250px;
+    justify-content: center;
+    display: flex;    
+}
+
+.key-text {
+    max-width: 640px;
 }
 
 .bottom-header {
