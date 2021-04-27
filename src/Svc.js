@@ -8,26 +8,23 @@ function Svc(props) {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        if (props.count > 100) { console.log("Svc: count = " + props.count + " - polling limit exceeded.") }
-        else {
-          fetch(props.address)
-            .then(res => res.json())
-            .then(
-                (result) => {
+        fetch(props.template, { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
+             .then(res => res.json())
+             .then(
+                 (result) => {
                     setIsLoaded(true);
                     console.log("Svc: count = " + props.count);
                     setData(result);
-                },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-        } 
-    }, [props])
+                 },
+                 // Note: it's important to handle errors here
+                 // instead of a catch() block so that we don't swallow
+                 // exceptions from actual bugs in components.
+                 (error) => {
+                     setIsLoaded(true);
+                     setError(error);
+                 }
+              )
+    } ,[props])
 
     if (error) {
         return <div>Error: {error.message}</div>;

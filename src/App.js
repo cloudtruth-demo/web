@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 import Svc from './Svc';
 import CTChart from './CTChart';
 import ctlogo from './cloudtruth-logo.png';
 import params from './app-params.jpg';
-import useInterval from 'use-interval';
  
 function App() {
-    const [count, setCount] = useState(0);
-    useInterval(() => { setCount(count + 1); }, process.env.REACT_APP_POLLING_INTERVAL);
 
     return (
              <div className="top-level">
@@ -37,8 +34,7 @@ function App() {
                      </div>
                      <div className="app-block-middle">
                          <div className="app-chart">
-                             <CTChart address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
-                                              "/" + process.env.REACT_APP_ENV} count={count}/>
+                             <CTChart template='web.app.live_config.json'/>
                          </div>
                      </div>
                      <div className="app-info-bottom">
@@ -52,8 +48,7 @@ function App() {
                              <img src={params} alt="params"/>
                          </div>
                          <div className="SVC-block">
-                             <Svc address={"https://api.cloudtruth.com/t/" + process.env.REACT_APP_CONFIG_TID +
-                                            "/" + process.env.REACT_APP_ENV} count={count}/>
+                             <Svc template='web.app.live_config.json'/>
                          </div>
                      </div>
                  </div>

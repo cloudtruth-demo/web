@@ -9,12 +9,11 @@ function CTChart(props) {
     const [options, setOptions] = useState({});
 
     useEffect(() => {
-       fetch('web.app.live_config.json', { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
+       fetch(props.template, { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
             .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    console.log("CTChart: count = " + props.count);
                     setSeries(result.series);
                     setOptions( { chart: { width: '100%', height: 350, type: 'radialBar', },
                                   plotOptions: { radialBar: { offsetY: 0, startAngle: 0, endAngle: 270, 
