@@ -9,9 +9,7 @@ function CTChart(props) {
     const [options, setOptions] = useState({});
 
     useEffect(() => {
-        if (props.count > 100) { console.log("CTChart: count = " + props.count + " - polling limit exceeded.") }
-        else {
-          fetch(props.address)
+       fetch('web.app.live_config.json', { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
             .then(res => res.json())
             .then(
                 (result) => {
@@ -42,8 +40,6 @@ function CTChart(props) {
                     setError(error);
                 }
             )
-
-      } 
     } ,[props])
 
     if (error) {
