@@ -13,7 +13,7 @@ function App() {
                      <div className="ct-logo-block">
                          <h6>A reference architecture for the</h6>
                          <a href="https://cloudtruth.com"><img src={ctlogo} alt="cloudtruth"/></a>
-                         <h6>Configuration Intelligence service</h6>
+                         <h6>unified configuration service</h6>
                      </div>
                  </div>
                  <div className="use-case">
@@ -21,14 +21,13 @@ function App() {
                      </div>
                      <div className="app-block-top">
                          <div className="app-text" id="webapp">
-                             <h2>Dynamic configuration of a web application</h2>
+                             <h2>Using CloudTruth to Configure a Web Application</h2>
                              <h4>The following chart is configured via JSON fetched directly by the web application
                                  from a CloudTruth configuration template</h4>
                              <ul>
-                                 <li>This demonstrates the use of a CloudTruth template as a dynamic source of configuration
+                                 <li>This demonstrates the use of a CloudTruth template as a source of configuration
                                      for a web application at runtime.</li>
-                                 <li>Changes to the template or the parameters it references will be picked up immediately
-                                     and shown below.</li>
+                                 <li>The template is generated during CI/CD deployment via the CloudTruth CLI integration with GitHub Actions</li>
                              </ul>
                          </div>
                      </div>
