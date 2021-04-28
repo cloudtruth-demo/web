@@ -9,14 +9,11 @@ function CTChart(props) {
     const [options, setOptions] = useState({});
 
     useEffect(() => {
-        if (props.count > 100) { console.log("CTChart: count = " + props.count + " - polling limit exceeded.") }
-        else {
-          fetch(props.address)
+       fetch(props.template, { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
             .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    console.log("CTChart: count = " + props.count);
                     setSeries(result.series);
                     setOptions( { chart: { width: '100%', height: 350, type: 'radialBar', },
                                   plotOptions: { radialBar: { offsetY: 0, startAngle: 0, endAngle: 270, 
@@ -42,8 +39,6 @@ function CTChart(props) {
                     setError(error);
                 }
             )
-
-      } 
     } ,[props])
 
     if (error) {
