@@ -8,12 +8,11 @@ function Svc(props) {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch(props.template, { headers : { 'Content-Type': 'application/json', 'Accept': 'application/json' } } )
+        fetch(props.address)
              .then(res => res.json())
              .then(
                  (result) => {
                     setIsLoaded(true);
-                    console.log("Svc: count = " + props.count);
                     setData(result);
                  },
                  // Note: it's important to handle errors here

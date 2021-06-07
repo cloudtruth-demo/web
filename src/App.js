@@ -47,7 +47,28 @@ function App() {
                              <img src={params} alt="params"/>
                          </div>
                          <div className="SVC-block">
-                             <Svc template='web.app.live_config.json'/>
+                             <Svc address='web.app.live_config.json'/>
+                         </div>
+                     </div>
+                 </div>
+                 <div className="use-case">
+                     <div className="use-case-header">
+                     </div>
+                     <div className="app-block-top">
+                         <div className="app-text" id="webapp">
+                             <h2>Static and Dynamic configuration within a Service</h2>
+                             <h4>The following JSON block is fetched from a simple JSON service (<a href={process.env.REACT_APP_DEMO1_ADDRESS}>{process.env.REACT_APP_DEMO1_ADDRESS}</a>)</h4>
+                             <ul>
+                                 <li>This JSON block represents the current configuration for the service</li>
+                                 <li>The data is generated statically at deploy time vi CI, then updated live with a fetch from CloudTruth</li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div className="app-info-bottom">
+                     </div>
+                     <div className="app-block-bottom">
+                         <div className="SVC-block">
+                             <Svc address={process.env.REACT_APP_DEMO1_ADDRESS}/>
                          </div>
                      </div>
                  </div>

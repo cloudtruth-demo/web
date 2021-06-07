@@ -48,6 +48,7 @@ jobs:
         run: |
           cloudtruth -e ${ENV} --project deploy template get web_dotenv > .env
           cloudtruth -e ${ENV} --project web template get dotenv >> .env
+          cloudtruth -e ${ENV} --project web template get app.live_config > public/web.app.live_config.json
 
       - name: Build react
         run: yarn build

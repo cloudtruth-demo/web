@@ -6,11 +6,15 @@ services:
       dockerfile: Dockerfile
     command: 'app'
     environment:
-      SVC_ENV: 'development'
-      SVC_NAME: 'web'
+      SVC_ENV: 'local'
       SVC_PORT: '3000'
+      CLOUDTRUTH_API_KEY: ${CLOUDTRUTH_API_KEY:-}
       AWS_DEFAULT_REGION: 'local'
     volumes:
       - .:/srv/app
     ports:
       - '3000:3000'
+    # To keep server running:
+    # https://github.com/facebook/create-react-app/issues/8688#issuecomment-602110747
+    #
+    stdin_open: true

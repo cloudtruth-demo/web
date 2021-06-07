@@ -1,0 +1,7 @@
+{
+    "labels": ["Hammers", "Anvils", "Rockets"],
+    "colors": ["#777711", "#CC9900", "#773312"],
+    "series": [78, 73, 67],
+    "domain": "demo.cloudtruth.dev"
+}
+

@@ -23,7 +23,7 @@ export -f app_init
 
 function start_app {
   echo "Starting app"
-  echo "PORT=$SVC_PORT" >> .env
+  echo "PORT=$SVC_PORT" > .env.local
   exec yarn start
 }
 export -f start_app
