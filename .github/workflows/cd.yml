@@ -3,7 +3,7 @@ name: CD
 on: [push]
 
 env:
-  CT_API_KEY: ${{ secrets.CT_API_KEY }}
+  CLOUDTRUTH_API_KEY: ${{ secrets.CLOUDTRUTH_API_KEY }}
 
 jobs:
 
@@ -26,9 +26,13 @@ jobs:
 
       - name: Install cloudtruth cli
         uses: cloudtruth/cli-action@v1
-        with:
-          version: 0.1.3  
 
+      - uses: cloudtruth/configure-action@v1
+        with:
+          token: "${{ secrets.CLOUDTRUTH_API_KEY }}"
+          project: "deploy"
+          environment: "${{ env.ENV }}"
+          overwrite: true
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -42,15 +46,13 @@ jobs:
       # TID as secret, it technically doesn't have to be
       - name: Configure react
         run: |
-          cloudtruth -e ${ENV} template get deploy.web_dotenv  > .env
-          cloudtruth -e ${ENV} template get web.app.live_config > public/web.app.live_config.json
+          cloudtruth -e ${ENV} --project deploy template get web_dotenv > .env
+          cloudtruth -e ${ENV} --project web template get dotenv >> .env
 
       - name: Build react
         run: yarn build
 
       - name: Deploy to S3
         run: |
-          source <(cloudtruth -e ${ENV} template get deploy.aws_credentials_env)
-          source <(cloudtruth -e ${ENV} template get deploy.web_env)
-          aws s3 sync build/ s3://${BUCKET_NAME}/
-          aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
+          aws s3 sync build/ s3://${WEB_BUCKET_NAME}/
+          aws cloudfront create-invalidation --distribution-id ${WEB_DISTRIBUTION_ID} --paths /index.html /asset-manifest.json /manifest.json
